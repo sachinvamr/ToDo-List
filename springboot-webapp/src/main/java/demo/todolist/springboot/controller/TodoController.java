@@ -23,14 +23,14 @@ public class TodoController {
 		return "index";
 	}
 
-	@GetMapping("/showNewEmployeeForm")
+	@GetMapping("/showNewtodoForm")
 	public String addnewTask(Model model) {
 		To_Do_List t = new To_Do_List();
 		model.addAttribute("new_task", t);
 		return "new_task";
 	}
 
-	@PostMapping("/saveEmployee")
+	@PostMapping("/saveTask")
 	public String saveEmployee(@ModelAttribute("new_task") To_Do_List t) {
 		todoService.addTask(t);
 		return "redirect:/";
