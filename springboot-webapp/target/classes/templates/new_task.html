@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Task List</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Task List</h1>
+		<hr>
+		<h2>Save Task</h2>
+
+		<form action="#" th:action="@{/saveEmployee}" th:object="${new_task}"
+			method="POST">
+			<input type="text" th:field="*{task}" placeholder="Task"
+				class="form-control mb-4 col-4">
+
+			<button type="submit" class="btn btn-info col-2">Save Task</button>
+		</form>
+
+		<hr>
+
+		<a th:href="@{/}"> Back to Employee List</a>
+	</div>
+</body>
+</html>
